@@ -1,5 +1,9 @@
+/* Enable smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  /* all 4 margins will be set to 0, when its 0, you don't specify px */
   margin: 0;
   color: #40514E;
   text-align: center;
@@ -10,12 +14,12 @@ body {
 /* Title */
 h1 {
   font-size: 5.625rem;
-  margin: 0px auto 0 auto;
+  margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
   color: #66BFBF;
 }
 
-h2{
+h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   color: #66BFBF;
@@ -27,12 +31,8 @@ h3 {
   color: #11999E;
 }
 
-a {
-  color: #11999E;
-}
-
 p {
-    line-height: 2;
+  line-height: 2;
 }
 
 hr {
@@ -42,7 +42,8 @@ hr {
   margin: 25px auto;
 }
 
-a{
+/* Links */
+a {
   color: #11999E;
   font-family: 'Montserrat', sans-serif;
   margin: 10px 20px;
@@ -53,70 +54,88 @@ a:hover {
   color: #EAF6F6;
 }
 
-.top-container{
+/* Top Container */
+.top-container {
   background-color: #E4F9F5;
   position: relative;
   padding: 25px;
 }
-.middle-container{
-  margin: 0 0;
+
+/* Middle Container */
+.middle-container {
+  margin: 0;
 }
 
-.bottom-container{
+/* Bottom Container */
+.bottom-container {
   background-color: #66BFBF;
   padding: 50px 0 20px;
 }
 
-.pro{
+.pro {
   text-decoration: underline;
 }
 
-.contact-message{
+/* Contact Message Section */
+.contact-message {
   width: 40%;
   margin: 40px auto 60px;
 }
 
+/* Footer Link Style */
+.footer-link {
+  color: #EAF6F6;
+  font-size: 1rem;
+}
+
+/* Copyright */
 .copyright {
   color: #EAF6F6;
   font-size: 0.75rem;
   padding: 20px 0;
 }
 
-
 /* Projects Section */
 .projects-section {
-  display: flex; /* Arrange items in a row */
-  justify-content: space-around; /* Space out the projects evenly */
-  align-items: flex-start; /* Align items at the top */
-  padding: 20px; /* Add spacing around the section */
-  background-color: #f9f9f9; /* Light background for contrast */
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
 /* Individual Project Containers */
 .project {
-  width: 37%; /* Each project takes up 45% of the container width */
-  text-align: center; /* Center text within each project */
+  width: 37%;
+  text-align: center;
   padding: 10px;
-  background-color: #ffffff; /* White background for projects */
-  border: 1px solid #ddd; /* Light border around projects */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
 
 /* Project Images */
 .project-image {
-  width: 250px; /* Make image fit the width of the container */
+  width: 250px;
   height: 200px;
-  object-fit: civer;
-  border-radius: 8px; /* Rounded corners for images */
-  margin-bottom: 10px; /* Spacing below the image */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .small-text {
-  font-size: 14px; /* Adjust the size as needed */
+  font-size: 14px;
   text-align: left;
 }
+
+/* Button Style */
 .btn {
   background: #11cdd4;
   background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
@@ -127,11 +146,12 @@ a:hover {
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
-  font-family: 'Montserrat', sans-serif;
   color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -141,5 +161,50 @@ a:hover {
   background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
   background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
   background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
-  text-decoration: none;
+}
+
+/* Back-to-Top Button */
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #11999E;
+  color: #fff;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+#back-to-top.show {
+  display: block;
+}
+
+/* ============================= */
+/*  RESPONSIVE DESIGN FOR MOBILE */
+/* ============================= */
+@media (max-width: 768px) {
+  .projects-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
 }
