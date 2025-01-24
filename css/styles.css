@@ -76,9 +76,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Contact Message Section */
-.contact-message {
-  width: 40%;
+.contact-me{
   margin: 40px auto 60px;
 }
 
@@ -123,8 +121,8 @@ a:hover {
 
 /* Project Images */
 .project-image {
-  width: 250px;
-  height: 200px;
+  width: 300px;
+  height: 240px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -162,6 +160,7 @@ a:hover {
   background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
   background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
 }
+
 
 /* Back-to-Top Button */
 #back-to-top {
