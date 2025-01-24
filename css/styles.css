@@ -99,7 +99,7 @@ a:hover {
 .projects-section {
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: stretch;
   padding: 20px;
   background-color: #f9f9f9;
 }
