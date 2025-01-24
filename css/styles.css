@@ -73,9 +73,10 @@ a:hover {
 }
 
 .middle-container img {
-  max-width: 100%;
+  max-width: 100%; /* Make it responsive */
   height: auto;
-  display: block;
+  display: block;  /* Ensure it's treated as a block-level element */
+  margin: 0 auto;  /* Center it horizontally */
 }
 
 /* Bottom Container */
@@ -105,8 +106,9 @@ a:hover {
 /* Projects Section */
 .projects-section {
   display: flex;
-  justify-content: space-around;
-  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+  align-items: stretch; /* All project containers are the same height */
   padding: 20px;
   background-color: #f9f9f9;
 }
@@ -114,14 +116,16 @@ a:hover {
 /* Individual Project Containers */
 .project {
   width: 37%;
+  min-height: 300px; /* Ensures consistent height for all projects */
   text-align: center;
   padding: 10px;
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .project:hover {
   transform: translateY(-5px);
@@ -130,12 +134,11 @@ a:hover {
 
 /* Project Images */
 .project-image {
-  max-width: 300px; /* it won't exceed 300px but can shrink for smaller screens */
-  height: auto;     /* keeps aspect ratio */
-  object-fit: cover;
+  width: 100%; /* Image fills its container */
+  height: 150px; /* Ensures all images are the same height */
+  object-fit: cover; /* Crops images to maintain aspect ratio */
   border-radius: 8px;
   margin-bottom: 10px;
-  display: block;   /* helps with spacing, typically good practice for images */
 }
 
 .small-text {
